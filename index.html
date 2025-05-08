@@ -181,21 +181,23 @@
   }
   
   .hair {
-    width: 30%;
-    height: 12%;
-    background: rgba(255, 192, 203, 0);
+    position: absolute;
+    width: 5%;
+    height: 50%;
+    background: rgb(123, 25, 25);
     border-radius: 100%;
-    box-shadow: -1.5vmin 1.4vmin 0 -1vmin;
-    bottom: -0%;
-    left: 50%;
-    transform: translate(110%, 520%) rotate(5deg);
+    box-shadow: -.5vmin 1.4vmin 0 -1vmin;
+    top: -5%;
+    left: 20%;
+    transform: translate(100%, 52%) rotate(10deg);
+    z-index: 1;
   }
   </style>
   
 
 
 <div class="frame">
-  <div class="hair"></div>
+   <div class="hair"></div>
   <div class="neck"></div>
   <div class="ear"></div>
   <div class="ear"></div>
@@ -214,3 +216,5 @@
     <div class="mouth"></div>
   </div>
 </div>
+
+<script src="https://cdn.jsdelivr.net/gh/netizenorg/netnet-standard-library/build/nn.min.js"></script>
