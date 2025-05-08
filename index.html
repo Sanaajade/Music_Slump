@@ -53,30 +53,85 @@
   
   .pupil {
     clip-path: circle(12.8% at 50% 50%);
-    background-color: black;    
+    background-color: rgb(80, 58, 42);    
   }
   
   .one1 {
     position: absolute;
     width: 80px;
-    height: 80px;
-    top: 40%;
-    left: 35%; 
+    height: 200px;
+    top: 50%;
+    left: 50%; 
     transform: translate(-50%, -50%);   
   }
   
   .two2 {
     position: absolute;
     width: 80px;
-    height: 80px;
-    top: 40%;
-    right: 20%;
-    transform: translate(-50%, -50%);   
+    height: 200px;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);   
+  }
+   .hair {
+      position: absolute;
+      top: -30px;
+      left: -20px;
+      width: 190px;
+      height: 100px;
+      background: #3a2b1d;
+      border-radius: 50%;
+      z-index: 0;
+    }
+
+    .curl {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: #3a2b1d;
+      border-radius: 50%;
+    }
+  
+  .mouth {
+    width: 30%;
+    height: 12%;
+    background: pink;
+    border-radius: 100%;
+    box-shadow: -0.5vmin 1.4vmin 0 -1vmin;
+    bottom: -0%;
+    left: 50%;
+    transform: translate(110%, 520%) rotate(5deg);
   }
   
-</style>
+  .ear {
+    position: absolute;
+    width: 15%;
+    height: 25%;
+    background: rgb(83, 48, 27);
+    border: 0.5vmin solid;
+    border-radius: 100%/ 50% 50% 20% 120%;
+    box-shadow: -0.125vmin -0.25vmin;
+    top: 45%;
+    left: -10%;
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+  
+
+.ear + .ear{
+  left: auto;
+  right: 5%;
+  transform: scaleX(-1) rotate(-15deg);
+  
+}
+
+  </style>
+  
+
 
 <div class="frame">
+  <div class="ear"></div>
+  <div class="ear"></div>
   <div class="head">
     <div class="eye one">
       <div class="pupil one1"></div>
@@ -84,7 +139,9 @@
     <div class="eye two">  
       <div class="pupil two2"></div>
     </div>
+    <div class="mouth"></div>
     <div class="hair">
+
     </div>
   </div>
 </div>
