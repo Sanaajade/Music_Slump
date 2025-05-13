@@ -19,7 +19,7 @@
   }
   
   .head {
-    position: absolute;
+    position: relative;
     clip-path: ellipse(33% 40% at 50% 50%);
     background-color: rgb(108, 51, 7);
     width: 450px;
@@ -187,17 +187,24 @@
     background: rgb(123, 25, 25);
     border-radius: 100%;
     box-shadow: -.5vmin 1.4vmin 0 -1vmin;
-    top: -5%;
-    left: 20%;
-    transform: translate(100%, 52%) rotate(10deg);
-    z-index: 1;
+    z-index: 2;
+  }
+  
+  .headphones {
+    position: absolute;
+    width: 95%;
+    height: 90%;
+    top: -9%;
+    left: 5%;
+    z-index: 1
+    
   }
   </style>
   
-
-
+    
+     
 <div class="frame">
-   <div class="hair"></div>
+  <img src= "Adobe Express - file (10).png"alt="colorful headphones" class="headphones">
   <div class="neck"></div>
   <div class="ear"></div>
   <div class="ear"></div>
@@ -216,5 +223,32 @@
     <div class="mouth"></div>
   </div>
 </div>
-
+     
 <script src="https://cdn.jsdelivr.net/gh/netizenorg/netnet-standard-library/build/nn.min.js"></script>
+
+<script>
+/* global nn */
+  
+  nn.on('load', () => {
+    const head = nn.get('.head');
+    const numHairs = 60;
+    const radius = 180;
+    
+    for (let i = 0; i < numHairs; i++) {
+      const angle = (Math.PI * 2 / numHairs) * i;
+      const x = Math.cos(angle) * radius;
+      const y = Math.sin(angle) * radius;
+      
+      const hair = nn.create('div.hair');
+      nn.css(hair, {
+        position: 'absolute',
+        left: '50%',
+        top: '50%',
+        transform: `translate(${x}px, ${y}px) rotate(${angle}rad)`,
+        zIndex: 2,
+      });
+      console.log(nn);
+      head.appendChild(hair);
+    }
+  });
+</script>
