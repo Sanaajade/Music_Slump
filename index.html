@@ -6,6 +6,26 @@
   html {
     background-color: honeydew;
   }
+  h2 {
+    font-family: "Oswald", sans-serif;
+    color: rgb(177, 53, 39);
+    text-align: center;
+    font-size: 150%;
+  }
+  
+   h3 {
+    font-family: "Oswald", sans-serif;
+    color: rgb(177, 53, 39);
+    text-align: center;
+    font-size: 150%;
+  }
+  
+   h4 {
+    font-family: "Oswald", sans-serif;
+    color: rgb(177, 53, 39);
+    text-align: center;
+    font-size: 150%;
+  }
   
   body {
     display: flex;
@@ -245,9 +265,9 @@
   </style>
 
 <body>
- <div id="song"></div>
-      <p id="artist"></p>
-      <p id="releaseDate"></p>
+ <h2 id="song"></h2>
+      <h3 id="artist"></h3>
+      <h4 id="releaseDate"></h4>
       <button class="button" onclick="newRandomSong()"><span>NEW SONG</span></button>   
 
      
@@ -341,6 +361,7 @@
   }
   
   async function newRandomSong() {
+    console.log("Fetching new song...");
     const token = await getAccessToken();
     const song = await getRandomSong(token);
     
