@@ -1,47 +1,61 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Coral+Pixels&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Coral+Pixels&family=Honk&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
 
 <style>
   html {
     background-color: honeydew;
   }
-  h2 {
-    font-family: "Oswald", sans-serif;
-    color: rgb(177, 53, 39);
+
+  h1 {
     text-align: center;
-    font-size: 150%;
+    padding: 50px;
+    width: 60vw;
+    margin: 70vh auto;
+    font-size: 60px;
+    display: inline;
+    font-family: "Honk", system-ui;
   }
-  
-   h3 {
-    font-family: "Oswald", sans-serif;
-    color: rgb(177, 53, 39);
-    text-align: center;
-    font-size: 150%;
-  }
-  
-   h4 {
-    font-family: "Oswald", sans-serif;
-    color: rgb(177, 53, 39);
-    text-align: center;
-    font-size: 150%;
-  }
-  
-  body {
+
+  .content {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    height: 100vh;
-    margin: 0;
+    padding: 0 5%;
+    height: calc(100vh - 120px);
+    /* 100vh minus header height */
   }
-  
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+    gap: 1rem;
+  }
+
+  .song,
+  .artist,
+  .release {
+    font-family: "Oswald", sans-serif;
+    color: rgb(177, 53, 39);
+    text-align: center;
+    font-size: 150%;
+  }
+
+  body {
+    margin: 0;
+    background-color: honeydew;
+    font-family: sans-serif;
+  }
+
   .frame {
     position: relative;
     width: 500px;
     height: 500px;
     border: 20px solid rgb(217, 175, 88);
   }
-  
+
   .head {
     position: relative;
     clip-path: ellipse(33% 40% at 50% 50%);
@@ -52,53 +66,53 @@
     left: 50%;
     transform: translate(-50%, -50%);
   }
-  
-  .one{
+
+  .one {
     position: absolute;
     clip-path: ellipse(45% 25% at 50% 50%);
-    background-color: rgb(255, 223, 208);
+    background-color: white;
     width: 80px;
     height: 80px;
     top: 40%;
     left: 35%;
-    transform: translate(-50%, -50%);    
+    transform: translate(-50%, -50%);
   }
-  
-  .two{
+
+  .two {
     position: absolute;
     clip-path: ellipse(45% 25% at 50% 50%);
-    background-color: rgb(255, 223, 208);
+    background-color: white;
     width: 80px;
     height: 80px;
     top: 40%;
     right: 20%;
-    transform: translate(-50%, -50%);    
+    transform: translate(-50%, -50%);
   }
-  
+
   .iris {
     clip-path: circle(12.8% at 50% 50%);
-    background-color: rgb(80, 58, 42);    
+    background-color: rgb(80, 58, 42);
   }
-  
+
   .one1 {
     position: absolute;
     width: 80px;
     height: 200px;
     top: 50%;
-    left: 50%; 
-    transform: translate(-50%, -50%);   
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
-  
+
   .two2 {
     position: absolute;
     width: 80px;
     height: 200px;
     top: 50%;
     right: 50%;
-    transform: translate(50%, -50%);   
+    transform: translate(50%, -50%);
   }
 
-  
+
   .mouth {
     width: 30%;
     height: 12%;
@@ -109,7 +123,7 @@
     left: 50%;
     transform: translate(110%, 520%) rotate(5deg);
   }
-  
+
   .ear {
     position: absolute;
     width: 15%;
@@ -123,15 +137,15 @@
     transform: translateY(-50%);
     z-index: 0;
   }
-  
 
-.ear + .ear{
-  left: auto;
-  top: 38%;
-  right: 10%;
-  transform: scaleX(-1) rotate(-15deg);
-  
-}
+
+  .ear+.ear {
+    left: auto;
+    top: 38%;
+    right: 10%;
+    transform: scaleX(-1) rotate(-15deg);
+
+  }
 
   .nose {
     position: absolute;
@@ -144,54 +158,55 @@
     transform: translate(-50%, 0%);
     box-shadow: 1.5vmin -0.5vmin;
     z-index: 1;
-    
+
   }
+
   .pupil {
     background: black;
     clip-path: circle(13.3% at 50% 50%);
   }
-  
+
   .one-pupil {
     position: absolute;
     width: 40px;
     height: 100px;
     top: 50%;
-    left: 50%; 
-    transform: translate(-50%, -50%);   
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
-  
+
   .two-pupil {
     position: absolute;
     width: 40px;
     height: 100px;
     top: 50%;
     right: 50%;
-    transform: translate(50%, -50%);   
+    transform: translate(50%, -50%);
   }
-  
+
   .sparkle {
     clip-path: circle(13.3% at 50% 50%);
     background: white;
   }
-  
+
   .one-sparkle {
     position: absolute;
     width: 20px;
     height: 20px;
     top: 50%;
     right: 40%;
-    transform: translate(50%, -50%);   
+    transform: translate(50%, -50%);
   }
-  
+
   .two-sparkle {
     position: absolute;
     width: 20px;
     height: 20px;
     top: 50%;
     right: 40%;
-    transform: translate(50%, -50%);   
+    transform: translate(50%, -50%);
   }
-  
+
   .neck {
     position: absolute;
     width: 25%;
@@ -203,7 +218,7 @@
     border: 0.5vmin solid;
     border-bottom: 0;
   }
-  
+
   .hair {
     position: absolute;
     width: 5%;
@@ -213,7 +228,7 @@
     box-shadow: -.5vmin 1.4vmin 0 -1vmin;
     z-index: 2;
   }
-  
+
   .headphones {
     position: absolute;
     width: 115%;
@@ -221,9 +236,8 @@
     top: -15%;
     left: -7%;
     z-index: 1
-    
   }
-  
+
   .button {
     font-family: "Oswald", sans-serif;
     border-radius: 4px;
@@ -238,153 +252,160 @@
     cursor: pointer;
     margin: 5px;
   }
+
   .button span {
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  transition: 0.5s;
-}
-.button span:after {
-  content: '»';
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  right: -20px;
-  transition: 0.5s;
-}
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
 
-.button:hover span {
-  padding-right: 25px;
-}
+  .button span:after {
+    content: '»';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
 
-.button:hover span:after {
-  opacity: 1;
-  right: 0;
-}
-  
-  </style>
+  .button:hover span {
+    padding-right: 25px;
+  }
+
+  .button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+</style>
 
 <body>
-  
- <div id="song"></div>
-      <div id="artist"></div>
-      <div id="releaseDate"></div>
-      <button id="button"><span>NEW SONG</span></button>
 
-     
-<div class="frame">
-  <img src= "Adobe Express - file (10).png"alt="colorful headphones" class="headphones">
-  <div class="neck"></div>
-  <div class="ear"></div>
-  <div class="ear"></div>
-  <div class="head">
-    <div class="eye one">
-      <div class="iris one1"></div>
-      <div class="pupil one-pupil"></div>
-      <div class="sparkle one-sparkle"></div>
+  <h1>Music Slump</h1>
+  <main class="content">
+    <div class="info">
+      <div id="song" class="song"></div>
+      <div id="artist" class="artist"></div>
+      <div id="releaseDate" class="release"></div>
+      <button id="button" class="button"><span>NEW SONG</span></button>
     </div>
-    <div class="eye two">  
-      <div class="iris two2"></div>
-      <div class="pupil two-pupil"></div>
-       <div class="sparkle two-sparkle"></div>
+
+
+
+  <div class="frame">
+    <img src="Adobe Express - file (10).png" alt="colorful headphones" class="headphones">
+    <div class="neck"></div>
+    <div class="ear"></div>
+    <div class="ear"></div>
+    <div class="head">
+      <div class="eye one">
+        <div class="iris one1"></div>
+        <div class="pupil one-pupil"></div>
+        <div class="sparkle one-sparkle"></div>
+      </div>
+      <div class="eye two">
+        <div class="iris two2"></div>
+        <div class="pupil two-pupil"></div>
+        <div class="sparkle two-sparkle"></div>
+      </div>
+      <div class="nose"></div>
+      <div class="mouth"></div>
     </div>
-    <div class="nose"></div>
-    <div class="mouth"></div>
   </div>
-</div>
-     
-<script src="https://cdn.jsdelivr.net/gh/netizenorg/netnet-standard-library/build/nn.min.js"></script>
+  </main>
+  
+  <script src="https://cdn.jsdelivr.net/gh/netizenorg/netnet-standard-library/build/nn.min.js"></script>
 
-<script>
-/* global nn */
-  
- /* nn.on('load', () => {
-    const head = nn.get('.head');
-    const numHairs = 60;
-    const radius = 180;
-    
-    for (let i = 0; i < numHairs; i++) {
-      const angle = (Math.PI * 2 / numHairs) * i;
-      const x = Math.cos(angle) * radius;
-      const y = Math.sin(angle) * radius;
-      
-      const hair = nn.create('div.hair');
-      nn.css(hair, {
-        position: 'absolute',
-        left: '50%',
-        top: '50%',
-        transform: `translate(${x}px, ${y}px) rotate(${angle}rad)`,
-        zIndex: 2,
-      });
-      console.log(nn);
-      head.appendChild(hair);
-    }
-  }); */
-  
-  const clientId = '1b4bb1e89cd64c0db3776b2a3908b6c3';
-  const clientSecret = 'cac54344a70246fa9f65c455d6bf2cbc';
-  const playlistId = '1dn2qxmdZIyFwVoLpbSekz';
-  
-  let audio = null;
-  
-  async function getAccessToken() {
-    const response = await fetch('https://api.spotify.com/v1/playlists/{playlist_id}/tracks', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-        'Authorization': 'Basic' + btoa(clientId + ':' + clientSecret)
-      
-      },
-      body: 'grant_type=client_credentials'
-    });
-    
-    const data = await response.json();
-    return data.access_token;
-  }
-  
-  async function getRandomSong(accessToken) {
-    const response = await get(`https://api.spotify.com/v1/playlists/${playlistId}/tracks`, {
-      headers: {
-        'Authorization': 'Bearer' + accessToken
+  <script>
+    /* global nn */
+
+    nn.on('load', () => {
+      const head = nn.get('.head');
+      const numHairs = 60;
+      const radius = 180;
+
+      for (let i = 0; i < numHairs; i++) {
+        const angle = (Math.PI * 2 / numHairs) * i;
+        const x = Math.cos(angle) * radius;
+        const y = Math.sin(angle) * radius;
+
+        const hair = nn.create('div.hair');
+        nn.css(hair, {
+          position: 'absolute',
+          left: '50%',
+          top: '50%',
+          transform: `translate(${x}px, ${y}px) rotate(${angle}rad)`,
+          zIndex: 2,
+        });
+        console.log(nn);
+        head.appendChild(hair);
       }
     });
-    
-    const data = await response.json();
-    const tracks = data.items;
-    const randomTrack = tracks[Math.floor(Math.random() * tracks.length)].track;
-    
-    return {
-      name: randomTrack.name,
-      artist: randomTrack.artists.map(artist => artist.name).join(', '),
-      releaseDate: randomTrack.album.release_date,
-      previewUrl: randomTrack.preview_url
-    };
-  }
-  
-  async function newRandomSong() {
-    console.log("Fetching new song...");
-    const token = await getAccessToken();
-    const song = await getRandomSong(token);
-    
-    nn.set('#song', song.name);
-    nn.set('#artist', song.artist);
-    nn.set('#releaseDate', 'Released: '+song.releaseDate);
-    
-    if (audio) {
-      audio.pause();
-      audio.remove();
+
+    const clientId = '1b4bb1e89cd64c0db3776b2a3908b6c3';
+    const clientSecret = 'cac54344a70246fa9f65c455d6bf2cbc';
+    const playlistId = '1dn2qxmdZIyFwVoLpbSekz';
+
+    let audio = null;
+
+    async function getAccessToken() {
+      const response = await fetch('https://api.spotify.com/v1/playlists/{playlist_id}/tracks', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+          'Authorization': 'Basic' + btoa(clientId + ':' + clientSecret)
+
+        },
+        body: 'grant_type=client_credentials'
+      });
+
+      const data = await response.json();
+      return data.access_token;
     }
-    
-    if (song.previewUrl) {
-      audio = new Audio(song.previewUrl);
-      audio.play();
-    } else {
-      alert('No preview available for this song.');
+
+    async function getRandomSong(accessToken) {
+      const response = await get(`https://api.spotify.com/v1/playlists/${playlistId}/tracks`, {
+        headers: {
+          'Authorization': 'Bearer' + accessToken
+        }
+      });
+
+      const data = await response.json();
+      const tracks = data.items;
+      const randomTrack = tracks[Math.floor(Math.random() * tracks.length)].track;
+
+      return {
+        name: randomTrack.name,
+        artist: randomTrack.artists.map(artist => artist.name).join(', '),
+        releaseDate: randomTrack.album.release_date,
+        previewUrl: randomTrack.preview_url
+      };
     }
-  }
-  
-  nn.on('load', () => {
-    nn.on('.button', 'click', newRandomSong);
-  });
-</script>
-  </body>
+
+    async function newRandomSong() {
+      console.log("Fetching new song...");
+      const token = await getAccessToken();
+      const song = await getRandomSong(token);
+
+      nn.set('#song', song.name);
+      nn.set('#artist', song.artist);
+      nn.set('#releaseDate', 'Released: ' + song.releaseDate);
+
+      if (audio) {
+        audio.pause();
+        audio.remove();
+      }
+
+      if (song.previewUrl) {
+        audio = new Audio(song.previewUrl);
+        audio.play();
+      } else {
+        alert('No preview available for this song.');
+      }
+    }
+
+    nn.on('load', () => {
+      nn.on('.button', 'click', newRandomSong);
+    });
+  </script>
+</body>
