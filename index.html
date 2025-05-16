@@ -319,29 +319,6 @@
   <script>
     /* global nn */
 
-    nn.on('load', () => {
-      const head = nn.get('.head');
-      const numHairs = 60;
-      const radius = 180;
-
-      for (let i = 0; i < numHairs; i++) {
-        const angle = (Math.PI * 2 / numHairs) * i;
-        const x = Math.cos(angle) * radius;
-        const y = Math.sin(angle) * radius;
-
-        const hair = nn.create('div.hair');
-        nn.css(hair, {
-          position: 'absolute',
-          left: '50%',
-          top: '50%',
-          transform: `translate(${x}px, ${y}px) rotate(${angle}rad)`,
-          zIndex: 2,
-        });
-        console.log(nn);
-        head.appendChild(hair);
-      }
-    });
-
     const clientId = '1b4bb1e89cd64c0db3776b2a3908b6c3';
     const clientSecret = 'cac54344a70246fa9f65c455d6bf2cbc';
     const playlistId = '1dn2qxmdZIyFwVoLpbSekz';
@@ -349,7 +326,7 @@
     let audio = null;
 
     async function getAccessToken() {
-      const response = await fetch('https://api.spotify.com/v1/playlists/{playlist_id}/tracks', {
+      const response = await nn.fetch('https://accounts.spotify.com/api/tokens', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
@@ -360,17 +337,19 @@
       });
 
       const data = await response.json();
+      console.log('access token data', data)
       return data.access_token;
     }
 
     async function getRandomSong(accessToken) {
-      const response = await get(`https://api.spotify.com/v1/playlists/${playlistId}/tracks`, {
+      const response = await fetch(`https://api.spotify.com/v1/playlists/${playlistId}/tracks`, {
         headers: {
           'Authorization': 'Bearer' + accessToken
         }
       });
 
       const data = await response.json();
+      console.log(data)
       const tracks = data.items;
       const randomTrack = tracks[Math.floor(Math.random() * tracks.length)].track;
 
@@ -385,6 +364,7 @@
     async function newRandomSong() {
       console.log("Fetching new song...");
       const token = await getAccessToken();
+      console.log('this is the token', token)
       const song = await getRandomSong(token);
 
       nn.set('#song', song.name);
@@ -405,7 +385,7 @@
     }
 
     nn.on('load', () => {
-      nn.on('.button', 'click', newRandomSong);
+      nn.get('#button').on('click', newRandomSong);
     });
   </script>
 </body>
